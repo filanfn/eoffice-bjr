@@ -120,9 +120,6 @@ class LetterTypeResource extends Resource
                 TextColumn::make('name')
                     ->label('Nama Jenis Surat')
                     ->searchable(),
-                TextColumn::make('form_schema')
-                    ->label('Jumlah Field')
-                    ->formatStateUsing(fn($state) => is_array($state) ? count($state) . ' field' : '0 field'),
                 TextColumn::make('created_at')
                     ->label('Dibuat')
                     ->dateTime('d M Y')
