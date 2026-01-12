@@ -28,6 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->registration()
             ->brandName('E-Office PT. BJR')
             ->colors([
                 'primary' => Color::Indigo,
