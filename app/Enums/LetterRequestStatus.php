@@ -15,10 +15,10 @@ enum LetterRequestStatus: string implements HasColor, HasLabel
     public function getLabel(): string
     {
         return match ($this) {
-            self::Pending => 'Pending',
-            self::Processing => 'Processing',
-            self::Completed => 'Completed',
-            self::Rejected => 'Rejected',
+            self::Pending => 'Menunggu',
+            self::Processing => 'Diproses',
+            self::Completed => 'Selesai',
+            self::Rejected => 'Ditolak',
         };
     }
 

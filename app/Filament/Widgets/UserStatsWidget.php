@@ -37,9 +37,9 @@ class UserStatsWidget extends BaseWidget
             ->count();
 
         return [
-            Stat::make('My Submissions', (string) $totalSubmitted),
-            Stat::make('Approvals', (string) $completed),
-            Stat::make('Rejected', (string) $rejected),
+            Stat::make('Pengajuan Saya', (string) $totalSubmitted),
+            Stat::make('Disetujui', (string) $completed),
+            Stat::make('Ditolak', (string) $rejected),
         ];
     }
 }

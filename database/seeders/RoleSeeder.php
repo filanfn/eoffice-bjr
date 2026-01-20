@@ -49,7 +49,7 @@ class RoleSeeder extends Seeder
                 'code' => 'SP',
                 'form_schema' => [
                     ['name' => 'tugas', 'label' => 'Tugas', 'type' => 'textarea', 'required' => true],
-                    ['name' => 'deadline', 'label' => 'Deadline', 'type' => 'date', 'required' => true]
+                    ['name' => 'deadline', 'label' => 'Tenggat Waktu', 'type' => 'date', 'required' => true]
                 ]
             ]);
         } else {

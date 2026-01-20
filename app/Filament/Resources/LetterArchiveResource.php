@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Panel;
 use App\Filament\Resources\LetterArchiveResource\Pages;
 use App\Models\LetterRequest;
 use Filament\Actions\Action;
@@ -42,7 +43,7 @@ class LetterArchiveResource extends Resource
         return 'Arsip Surat';
     }
 
-    public static function getSlug(?\Filament\Panel $panel = null): string
+    public static function getSlug(?Panel $panel = null): string
     {
         return 'arsip-surat';
     }
@@ -117,8 +118,8 @@ class LetterArchiveResource extends Resource
                     })
             ])
             ->recordActions([
-                \Filament\Actions\Action::make('download')
-                    ->label('Download PDF')
+                Action::make('download')
+                    ->label('Unduh PDF')
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('primary')
                     ->outlined()

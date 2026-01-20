@@ -28,7 +28,7 @@ class PendingRequestsWidget extends BaseWidget
     /**
      * Widget heading.
      */
-    protected static ?string $heading = 'Pending Requests';
+    protected static ?string $heading = 'Permintaan Menunggu';
 
     public function table(Table $table): Table
     {
@@ -37,13 +37,13 @@ class PendingRequestsWidget extends BaseWidget
             ->defaultSort('created_at', 'desc')
             ->columns([
                 Tables\Columns\TextColumn::make('letterType.name')
-                    ->label('Letter Type')
+                    ->label('Jenis Surat')
                     ->icon('heroicon-o-document-text')
                     ->weight('bold')
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Submitted')
+                    ->label('Diajukan')
                     ->dateTime('d M Y, H:i')
                     ->sortable()
                     ->color('gray'),
@@ -66,8 +66,8 @@ class PendingRequestsWidget extends BaseWidget
                     }),
 
                 Tables\Columns\TextColumn::make('letter_number')
-                    ->label('Letter Number')
-                    ->placeholder('Not assigned yet')
+                    ->label('Nomor Surat')
+                    ->placeholder('Belum ditetapkan')
                     ->color('gray')
                     ->toggleable(),
             ])
@@ -78,8 +78,8 @@ class PendingRequestsWidget extends BaseWidget
                         LetterRequestResource::getUrl('view', ['record' => $record])
                     ),
             ])
-            ->emptyStateHeading('No pending requests')
-            ->emptyStateDescription('You have no letter requests awaiting action.')
+            ->emptyStateHeading('Tidak ada permintaan menunggu')
+            ->emptyStateDescription('Anda tidak memiliki permintaan surat yang menunggu tindakan.')
             ->emptyStateIcon('heroicon-o-document-check')
             ->striped()
             ->paginated([5, 10, 25]);

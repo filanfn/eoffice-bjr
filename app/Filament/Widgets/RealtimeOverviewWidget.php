@@ -61,7 +61,7 @@ class RealtimeOverviewWidget extends BaseWidget
             ? round((($today - $lastWeekAvg) / $lastWeekAvg) * 100, 1)
             : 0;
 
-        return Stat::make('Letters Today', (string) $today)
+        return Stat::make('Surat Hari Ini', (string) $today)
             ->descriptionIcon($trend >= 0 ? 'heroicon-m-arrow-trending-up' : 'heroicon-m-arrow-trending-down')
             ->color('primary')
             ->chart($sparklineData);
@@ -76,7 +76,7 @@ class RealtimeOverviewWidget extends BaseWidget
 
         $sparklineData = $this->getStatusTrendData(LetterRequestStatus::Pending);
 
-        return Stat::make('Pending Approval', (string) $pending)
+        return Stat::make('Menunggu Persetujuan', (string) $pending)
             ->chart($sparklineData);
     }
 
@@ -100,7 +100,7 @@ class RealtimeOverviewWidget extends BaseWidget
 
         $sparklineData = $this->getStatusTrendData(LetterRequestStatus::Completed);
 
-        return Stat::make('Completed This Month', (string) $completedThisMonth)
+        return Stat::make('Selesai Bulan Ini', (string) $completedThisMonth)
             ->chart($sparklineData);
     }
 
@@ -119,7 +119,7 @@ class RealtimeOverviewWidget extends BaseWidget
 
         $sparklineData = $this->getStatusTrendData(LetterRequestStatus::Processing);
 
-        return Stat::make('In Processing', (string) $processing)
+        return Stat::make('Sedang Diproses', (string) $processing)
             ->chart($sparklineData);
     }
 
